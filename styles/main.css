@@ -1,61 +1,8 @@
 /* Import normalize CSS too if required */
+@import url("/styles/normalize.css");
 @import url("/styles/colors.css");
 @import url("/styles/sizes.css");
 @import url("/styles/effects.css");
-/* TODO: typography, buttons, forms, tables, misc. */
-
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
-}
-
-html,
-body {
-	overflow-x: hidden;
-}
-
-img,
-video {
-	display: block;
-}
-
-.section {
-	display: grid;
-	grid-template-columns:
-		[main-start] minmax(var(--section-padding-inline), 1fr)
-		[content-start] minmax(0, var(--content-max-width))
-		[content-end] minmax(var(--section-padding-inline), 1fr) [main-end];
-	margin-bottom: var(--spacing-section);
-
-}
-
-.section > * {
-	grid-column-start: content-start;
-	grid-column-end: content-end;
-}
-
-.section--full-width > * {
-	grid-column-start: main-start;
-	grid-column-end: main-end;
-}
-
-.section--no-margin {
-	margin-bottom: 0;
-}
-
-.section--full-width > .constrained {
-	grid-column-start: content-start;
-	grid-column-end: content-end;
-}
-
-.section--padded {
-	padding-block: var(--section-padding-block);
-}
-
-body.no-scroll {
-	overflow: hidden;
-}
+@import url("/styles/global.css");
+@import url("/styles/typography.css");
+@import url("/styles/buttons.css");

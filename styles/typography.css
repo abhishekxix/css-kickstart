@@ -1,1 +1,109 @@
-/* TODO: Implement this */
+:root {
+	--font-family-body: system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
+	--font-family-heading: var(--font-family-body);
+	--font-size-body: 1rem;
+	--font-size-sm: 0.875rem;
+
+	--font-size-h1: 3rem;
+	--font-size-h2: 2rem;
+	--font-size-h3: 1.75rem;
+	--font-size-h4: 1.375rem;
+	--font-size-h5: 1.125rem;
+	--font-size-h6: 1rem;
+
+	--font-weight-light: 100;
+	--font-weight-normal: 400;
+	--font-weight-bold: 700;
+	--font-weight-bolder: 900;
+
+	--spacing-text: var(--spacing-4);
+}
+
+@media screen and (min-width: var(--mq-lg)) {
+	:root {
+		--font-size-h1: 3.5rem;
+		--font-size-h2: 2.5rem;
+		--font-size-h3: 2rem;
+		--font-size-h4: 1.5rem;
+		--font-size-h5: 1.25rem;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--font-weight-bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	margin-bottom: var(--spacing-text);
+}
+
+:is(h1,h2,h3,h4,h5,h6,p):last-child {
+	margin-bottom: 0;
+}
+
+h1 {
+	font-size: var(--font-size-h1);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+}
+
+h4 {
+	font-size: var(--font-size-h4);
+}
+
+h5 {
+	font-size: var(--font-size-h5);
+}
+
+h6 {
+	font-size: var(--font-size-h6);
+}
+
+.text-sm {
+	font-size: var(--font-size-sm);
+}
+
+.text-bold {
+	font-weight: var(--font-weight-bold);
+}
+
+.text-light {
+	font-weight: var(--font-weight-light);
+}
+
+a {
+	text-decoration: none;
+}
+
+a:is(:hover, :focus-visible) {
+	text-underline-offset: 0.1em;
+	text-decoration: underline;
+}

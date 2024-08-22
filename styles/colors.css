@@ -241,4 +241,11 @@
 	--color-rose-80: #9f1239;
 	--color-rose-90: #881337;
 	--color-rose-95: #4c0519;
+
+	/* ! Change the following to override the styling. */
+	--color-primary: var(--color-teal-80);
+	--color-black: var(--color-neutral-90);
+	--color-white: var(--color-neutral-5);
+	--color-error-bg: var(--color-red-20);
+	--color-error-text: var(--color-red-60);
 }

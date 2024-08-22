@@ -1,0 +1,48 @@
+:root {
+	--btn-padding: var(--spacing-2) var(--spacing-3);
+	--btn-border-width: 1px;
+	--btn-border-radius: var(--border-radius-sm)
+}
+
+.btn,
+a.btn {
+	display: inline-block;
+	appearance: none;
+	padding: var(--btn-padding);
+	border: solid var(--btn-border-width) var(--color-primary);
+	color: var(--color-white);
+	background-color: var(--color-primary);
+	border-radius: var(--btn-border-radius);
+	text-decoration: none;
+	transition-property: background-color, color;
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
+}
+
+.btn:is(:hover, :focus-visible) {
+	background-color: var(--color-white);
+	color: var(--color-black);
+	cursor: pointer;
+}
+
+.btn--pill {
+	--btn-border-radius: var(--border-radius-lg);
+}
+
+.btn--outline {
+	background-color: var(--color-white);
+	color: var(--color-black);
+}
+
+.btn--outline:is(:hover, :focus-visible) {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+}
+
+.btn:not(:focus-visible) {
+	outline: transparent;
+}
+
+.btn:focus-visible {
+	outline-color: #ff4500;
+}

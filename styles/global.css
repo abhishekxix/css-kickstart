@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+body {
+	font-family: var(--font-family-body);
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-normal);
+	color: var(--color-black);
+}
+
+body.no-scroll {
+	overflow: hidden;
+}
+
+img,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.section {
+	display: grid;
+	grid-template-columns:
+		[main-start] minmax(var(--section-padding-inline), 1fr)
+		[content-start] minmax(0, var(--content-max-width))
+		[content-end] minmax(var(--section-padding-inline), 1fr) [main-end];
+	margin-bottom: var(--spacing-section);
+
+}
+
+.section > * {
+	grid-column-start: content-start;
+	grid-column-end: content-end;
+}
+
+.section--full-width > * {
+	grid-column-start: main-start;
+	grid-column-end: main-end;
+}
+
+.section--no-margin,
+.section:last-child,
+.section:last-of-type {
+	margin-bottom: 0;
+}
+
+.section--full-width > .constrained {
+	grid-column-start: content-start;
+	grid-column-end: content-end;
+}
+
+.section--padded {
+	padding-block: var(--section-padding-block);
+}
+
+.wrong {
+	background-color: var(--color-error-bg);
+	color: var(--color-error-text);
+	text-decoration: line-through;
+}
