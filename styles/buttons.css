@@ -1,7 +1,9 @@
 :root {
 	--btn-padding: var(--spacing-2) var(--spacing-3);
 	--btn-border-width: 1px;
-	--btn-border-radius: var(--border-radius-sm)
+	--btn-border-radius: var(--border-radius-sm);
+	--btn-focus-background-color: var(--color-white);
+	--btn-background-color: var(--color-primary);
 }
 
 .btn,
@@ -10,19 +12,37 @@ a.btn {
 	appearance: none;
 	padding: var(--btn-padding);
 	border: solid var(--btn-border-width) var(--color-primary);
+	background-color: var(--btn-background-color);
 	color: var(--color-white);
-	background-color: var(--color-primary);
 	border-radius: var(--btn-border-radius);
 	text-decoration: none;
-	transition-property: background-color, color;
+	transition-property: color;
 	transition-duration: var(--transition-duration);
+	transition-delay: var(--transition-delay);
 	transition-timing-function: var(--transition-timing-function);
+	overflow: hidden;
+	vertical-align: middle;
+	position: relative;
+	isolation: isolate;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: var(--btn-focus-background-color);
+	z-index: -1;
+	transform: translate(-100%);
+	transition: transform var(--transition-delay) var(--transition-duration) var(--transition-timing-function);
 }
 
 .btn:is(:hover, :focus-visible) {
-	background-color: var(--color-white);
 	color: var(--color-black);
 	cursor: pointer;
+}
+
+.btn:is(:hover, :focus-visible)::before {
+	transform: translate(0);
 }
 
 .btn--pill {
@@ -30,12 +50,12 @@ a.btn {
 }
 
 .btn--outline {
-	background-color: var(--color-white);
+	--btn-background-color: var(--color-white);
 	color: var(--color-black);
+	--btn-focus-background-color: var(--color-primary);
 }
 
 .btn--outline:is(:hover, :focus-visible) {
-	background-color: var(--color-primary);
 	color: var(--color-white);
 }
 
