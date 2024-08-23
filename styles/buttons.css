@@ -44,5 +44,5 @@ a.btn {
 }
 
 .btn:focus-visible {
-	outline-color: #ff4500;
+	outline-color: var(--color-outline-default);
 }

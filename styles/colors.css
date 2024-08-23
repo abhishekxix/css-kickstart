@@ -248,4 +248,5 @@
 	--color-white: var(--color-neutral-5);
 	--color-error-bg: var(--color-red-20);
 	--color-error-text: var(--color-red-60);
+	--color-outline-default: var(--color-orange-60);
 }
